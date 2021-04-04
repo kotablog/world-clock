@@ -114,6 +114,18 @@ body main h2 {
   margin: 20px auto;
 }
 
+body main #noTimeZone {
+  background-color: #f4f5f7;
+  border-radius: 10px;
+  padding: 20px 30px;
+  margin: 10px 0;
+}
+
+body main #noTimeZone h2 {
+  margin: 0 0 10px;
+  border: none;
+}
+
 body main ul {
   display: flex;
   flex-wrap: wrap;
@@ -357,7 +369,7 @@ body footer {
   text-align: center;
   font-weight: bold;
   font-size: 0.8em;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 @media screen and (min-width: 740px) {

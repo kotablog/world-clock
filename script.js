@@ -2,6 +2,7 @@
 
 // 各々変数の定義
 const showTimeZones = document.getElementById("showTimeZones"),
+  noTimeZone = document.getElementById("noTimeZone"),
   selectTimeZonesForm = document.getElementById("selectTimeZonesForm"),
   timeZonesElement = document.getElementById("timeZonesElement"),
   selectedTimeZones = [],
@@ -71,6 +72,9 @@ function addTimeZone() {
     li.id = selectedTimeZone;
 
     showTimeZones.appendChild(li);
+
+    // #noTimeZone要素を非表示
+    noTimeZone.style.display = 'none';
 
     // clock();
 
@@ -211,12 +215,13 @@ function clock() {
   setTimeout(clock, 1000);
 }
 
-// 表示した時計を全て削除する関数
+// 表示した時計を全て非表示にし#noTimeZone要素を表示する関数
 function deleteAll() {
   const li = document.querySelectorAll("li");
   for (let i = 0; i < li.length; i++) {
     li[i].style.display = 'none';
   }
+  noTimeZone.style.display = '';
 }
 
 clock();
