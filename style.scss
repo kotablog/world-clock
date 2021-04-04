@@ -114,13 +114,13 @@ body {
     }
     #howto {
       background-color: #f4f5f7;
-      padding: 50px 30px;
+      padding: 10px 20px 20px;
       border-radius: 10px;
       border-bottom: none;
       #hide {
         @include hideStyle;
         position: absolute;
-        top: 20px;
+        top: 10px;
         right: 10px;
       }
     }
@@ -130,7 +130,7 @@ body {
     #noTimeZone {
       background-color: #f4f5f7;
       border-radius: 10px;
-      padding: 20px 30px;
+      padding: 20px 20px;
       margin: 10px 0;
       h2 {
         margin: 0 0 10px;
@@ -170,8 +170,8 @@ body {
         div {
           position: relative;
           #clock {
-            width: calc(100vw * 0.8 * 0.50);
-            height: calc(100vw * 0.8 * 0.50);
+            width: calc(100vw * 0.8 * 0.6);
+            height: calc(100vw * 0.8 * 0.6);
             margin-left: auto;
             margin-right: auto;
             border: 1px solid #cad1dc;
@@ -196,11 +196,11 @@ body {
             }
             #hour {
               position: absolute;
-              width: calc(100vw * 0.8 * 0.50 * (16/35));
-              height: calc(100vw * 0.8 * 0.50 * (16/35));
+              width: calc(100vw * 0.8 * 0.60 * (16/35));
+              height: calc(100vw * 0.8 * 0.60 * (16/35));
               .hr {
-                width: calc(100vw * 0.8 * 0.50 * (16/35));
-                height: calc(100vw * 0.8 * 0.50 * (16/35));
+                width: calc(100vw * 0.8 * 0.60 * (16/35));
+                height: calc(100vw * 0.8 * 0.60 * (16/35));
                 display: flex;
                 justify-content: center;
                 position: absolute;
@@ -209,7 +209,7 @@ body {
                   content: '';
                   position: absolute;
                   width: 8px;
-                  height: calc(100vw * 0.8 * 0.50 * (8/35));
+                  height: calc(100vw * 0.8 * 0.60 * (8/35));
                   background: #d24655;
                   z-index: 10;
                   border-radius: 6px 6px 0 0;
@@ -218,11 +218,11 @@ body {
             }
             #min {
               position: absolute;
-              width: calc(100vw * 0.8 * 0.50 * (19/35));
-              height: calc(100vw * 0.8 * 0.50 * (19/35));
+              width: calc(100vw * 0.8 * 0.60 * (19/35));
+              height: calc(100vw * 0.8 * 0.60 * (19/35));
               .mn {
-                width: calc(100vw * 0.8 * 0.50 * (19/35));
-                height: calc(100vw * 0.8 * 0.50 * (19/35));
+                width: calc(100vw * 0.8 * 0.60 * (19/35));
+                height: calc(100vw * 0.8 * 0.60 * (19/35));
                 display: flex;
                 justify-content: center;
                 position: absolute;
@@ -231,7 +231,7 @@ body {
                   content: '';
                   position: absolute;
                   width: 4px;
-                  height: calc(100vw * 0.8 * 0.50 * (9.5/35));
+                  height: calc(100vw * 0.8 * 0.60 * (9.5/35));
                   background: #018eae;
                   z-index: 11;
                   border-radius: 6px 6px 0 0;
@@ -240,11 +240,11 @@ body {
             }
             #sec {
               position: absolute;
-              width: calc(100vw * 0.8 * 0.50 * (23/35));
-              height: calc(100vw * 0.8 * 0.50 * (23/35));
+              width: calc(100vw * 0.8 * 0.60 * (23/35));
+              height: calc(100vw * 0.8 * 0.60 * (23/35));
               .sc {
-                width: calc(100vw * 0.8 * 0.50 * (23/35));
-                height: calc(100vw * 0.8 * 0.50 * (23/35));
+                width: calc(100vw * 0.8 * 0.60 * (23/35));
+                height: calc(100vw * 0.8 * 0.60 * (23/35));
                 display: flex;
                 justify-content: center;
                 position: absolute;
@@ -253,7 +253,7 @@ body {
                   content: '';
                   position: absolute;
                   width: 2px;
-                  height: calc(100vw * 0.8 * 0.50 * (15/35));
+                  height: calc(100vw * 0.8 * 0.60 * (15/35));
                   background: #d27355;
                   z-index: 12;
                   border-radius: 6px 6px 0 0;
@@ -311,6 +311,13 @@ body {
 @media screen and (min-width: 740px) {
   body {
     main {
+      #howto {
+        padding: 30px 20px;
+        #hide {
+          top: 13px;
+          right: 10px;
+        }
+      }
       ul {
         li {
           width: calc(100vw * 0.8 * 0.48);
@@ -365,6 +372,13 @@ body {
 @media screen and (min-width: 1000px) {
   body {
     main {
+      #howto {
+        padding: 30px 20px;
+        #hide {
+          top: 20px;
+          right: 10px;
+        }
+      }
       ul {
         li {
           width: calc(100vw * 0.8 * (0.94/3));
