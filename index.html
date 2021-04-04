@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed&family=Crimson+Text&family=Orbitron&display=swap"
+    rel="stylesheet">
+  <title>World Clock</title>
+  <link rel="stylesheet" href="style.min.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>World Clock Maker</h1>
+    <p>Display World Date & Time</p>
+  </header>
+  <main>
+    <div id="howto">
+      <h2>How to Use</h2>
+      <p>How it works is easy:</p>
+      <p>1. Click "Add" to add clocks via timezone or place.</p>
+      <p>2. You can display clocks you have selected.</p>
+      <button type="button" id="hide" onclick="hideHowto()">×</button>
+    </div>
+    <h2>Clocks</h2>
+    <div id="showAndEdit">
+      <button type="button" id="show" onclick="showForm()">ADD</button>
+      <button type="button" id="edit" onclick="deleteAll()">DELETE ALL</button>
+    </div>
+    <ul id="showTimeZones"></ul>
+  </main>
+  <footer>
+    Copyright 2021 KOTA. All Rights Reserved.
+  </footer>
+  <div id="formBgSetting">
+    <div id="selectTimeZonesForm">
+      <form action="">
+        <p>Add Clock</p>
+        <select id="timeZonesElement">
+          <option value="" disabled selected>Select...</option>
+        </select>
+        <div id="add">
+          <button type="button" id="add" onclick="addTimeZone()">ADD</button>
+        </div>
+        <div id="hide">
+          <button type="button" id="hide" onclick="hideForm()">×</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
