@@ -76,7 +76,7 @@ function addTimeZone() {
     // #noTimeZone要素を非表示
     noTimeZone.style.display = 'none';
 
-    // clock();
+    clockDisplay();
 
   } else {
     // 要素が選択されていなけれは警告を表示
@@ -200,8 +200,8 @@ function showAnalogClock(timeZone, num) {
   sc.style.transform = `rotateZ(${ss}deg)`;
 }
 
-// li要素に時計を表示
-function clock() {
+// li要素に時間を表示する時の時差の埋め合わせを行う関数
+function clockDisplay() {
   const li = document.querySelectorAll("li");
 
   for (let i = 0; i < li.length; i++) {
@@ -212,6 +212,11 @@ function clock() {
     li[i].insertAdjacentHTML("beforeend", `<span id="ampm">${ampm(li[i].id)}</span>`);
     showAnalogClock(li[i].id, i);
   }
+}
+
+// li要素に時計を動作させる関数
+function clock() {
+  clockDisplay();
   setTimeout(clock, 1000);
 }
 
