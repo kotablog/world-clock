@@ -85,25 +85,33 @@ function addTimeZone() {
 }
 
 // 時間表示するための設定
-// 日付を表示する関数
-function showDate(timeZone) {
-  const day = new Date();
+// toLocaleDateString関数
+function returnDateString(timeZone) {
+  const now = new Date();
   let tz = timeZone;
   let options = { timeZone: tz, hour12: false };
-  const dayInfo = day.toLocaleDateString('en-GB', options);
+  return now.toLocaleDateString('en-GB', options);
+}
 
+// toLocaleTimeString関数
+function returnTimeString(timeZone) {
+  const now = new Date();
+  let tz = timeZone;
+  let options = { timeZone: tz, hour12: false };
+  return now.toLocaleTimeString('en-GB', options);
+}
+
+// 日付を表示する関数
+function showDate(timeZone) {
+  const dayInfo = returnDateString(timeZone);
   const ary = dayInfo.split("/");
-
   return `${ary[2]}/${ary[1]}/${ary[0]}`;
 }
 
 // 曜日を表示するための関数
 function showDay(timeZone) {
   const dayArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const day = new Date();
-  let tz = timeZone;
-  let options = { timeZone: tz, hour12: false };
-  const dayInfo = day.toLocaleDateString('en-GB', options);
+  const dayInfo = returnDateString(timeZone);
 
   const ary = dayInfo.split("/");
   const weekday = new Date(Number(ary[2]), Number(ary[1]) - 1, Number(ary[0]));
@@ -114,23 +122,14 @@ function showDay(timeZone) {
 
 // 時間をデジタル形式で表示する関数
 function showDigitalClock(timeZone) {
-  const time = new Date();
-  const tz = timeZone;
-  let options = { timeZone: tz };
-  const timeInfo = time.toLocaleTimeString('en-GB', options);
-
+  const timeInfo = returnTimeString(timeZone);
   const ary = timeInfo.split(':');
-
   return `${ary[0]} : ${ary[1]} : ${ary[2]}`;
 }
 
 // 時間帯がAMかPMかを判別
 function ampm(timeZone) {
-  const time = new Date();
-  const tz = timeZone;
-  let options = { timeZone: tz };
-  const timeInfo = time.toLocaleTimeString('en-GB', options);
-
+  const timeInfo = returnTimeString(timeZone);
   const ary = timeInfo.split(':');
 
   if (Number(ary[0]) < 12) {
@@ -179,11 +178,7 @@ function makeAnalogClock(num) {
 
 // 時間をアナログ形式で表示する関数
 function showAnalogClock(timeZone, num) {
-  const time = new Date();
-  const tz = timeZone;
-  let options = { timeZone: tz };
-  const timeInfo = time.toLocaleTimeString('en-GB', options);
-
+  const timeInfo = returnTimeString(timeZone);
   const ary = timeInfo.split(':');
 
   const deg = 6;
